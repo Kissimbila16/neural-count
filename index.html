@@ -15,11 +15,14 @@
     <h3>Processamento de imagens </h3>
     <br/>
     <button type="button" onclick="init()" class="border-1 rounded-2 border-light">Start</button>
+        <button type="button" onclick="init()" class="border-1 rounded-2 border-light">restart</button>
   </div>
   </div>
-  <div class="w-100 text-danger mt-4 d-flex fs-1 text-center  align-items-center justify-content-center">
-  <div id="webcam-container"></div>
-  <div id="label-container"></div>
+ <div class="w-100 text-danger mt-4 d-flex fs-1 text-center  align-items-center justify-content-center">
+ <div class="d-grid">
+  <div id="webcam-container" class="rounded-2"></div>
+  <div id="label-container" class="text-light fs-1" ></div>
+ </div>
   </div>
  <script type="text/javascript">
         const URL = "https://teachablemachine.withgoogle.com/models/t63pMyxM_/";
@@ -65,12 +68,8 @@
           }
       }
 
-      async function init() {
-        const flip = true; // whether to flip the webcam
-          webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-          await webcam.setup(); // request access to the webcam
-          await webcam.pause();
-
+      async function pause() {
+   location.reload();
       }
   </script>
   
