@@ -15,7 +15,6 @@
     <h3>Processamento de imagens </h3>
     <br/>
     <button type="button" onclick="init()" class="border-1 rounded-2 border-light">Start</button>
-    <button type="button" onclick="pause()" class="border-1 mt-3 rounded-2 border-light">Restart</button>
   </div>
   </div>
   <div class="w-100 text-danger mt-4 d-flex fs-1 text-center  align-items-center justify-content-center">
@@ -67,7 +66,10 @@
       }
 
       async function init() {
-       window.location.reload();
+        const flip = true; // whether to flip the webcam
+          webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+          await webcam.setup(); // request access to the webcam
+          await webcam.pause();
 
       }
   </script>
